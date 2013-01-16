@@ -352,6 +352,7 @@ void dumpOmegas(Cosmos& c, std::string prefix)
   for (double lna=0.; lna > log(c.a_min()) ; lna -= (1./points)) {
     double a = exp(lna);
     double tau = c.a2tau(a);
+    
     O_m.set(a, c.tau2rho_m(tau)/c.tau2rho(tau));
     O_b.set(a, c.tau2rho_b(tau)/c.tau2rho(tau));
     O_cdm.set(a, c.tau2rho_cdm(tau)/c.tau2rho(tau));
@@ -359,7 +360,7 @@ void dumpOmegas(Cosmos& c, std::string prefix)
     O_n.set(a, c.tau2rho_nu(tau)/c.tau2rho(tau));
     O_nm.set(a, c.tau2rho_nuNR(tau)/c.tau2rho(tau));
     O_v.set(a, c.tau2rho_v()/c.tau2rho(tau));
-    H_a.set(a, );
+    H_a.set(a, sqrt(1.0/3.0 * c.tau2rho(tau))/c.M_p());
   }
 
   O_m.dump("Omega_m");
@@ -369,6 +370,7 @@ void dumpOmegas(Cosmos& c, std::string prefix)
   O_r.dump("Omega_gamma");
   O_nm.dump("Omega_massive_nu");
   O_n.dump("Omega_nu");
+  H_a.dump("HubbleFactor_a");
 }
 
 
