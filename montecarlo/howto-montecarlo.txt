@@ -1,0 +1,142 @@
+
+
+The information in here is outdated, and relates to the old-style mcgeneral.cc way o
+using cmbeasy in monte-carlo simulations.
+
+
+*******************************************************************************
+******************** How-to montecarlo***************************************
+*****************************************************************************
+This is a small introduction into starting your own Markov Chain Monte Carlo simulation
+with cmbeasy and using the graphical user interface. We also give a few hints
+what to modify if you want to test your own models with the data using MCMC.
+
+1.) A SHORT TUTORIAL: Doing your first MCMC simulation
+------------------------------------------------------
+
+First install cmbeasy (see ``INSTALL'' in the cmbeasy directory), and make sure
+that you have compiled everything.
+
+The montecarlo driver will be compiled by typing ``make bin/mc_general''. You will have to 
+have the gnu scientific library installed for this to compile correctly.
+
+Before you compile, take some time to look at the file anisotropy/mc_general.cc. You will find a lot of 
+definitions of constants and some explanations. Try to understand some of the settings.
+
+Having compiled mc_general, you will have to make sure that you have LAM/MPI installed. Contact your 
+system adiminstrator if you are not sure, or get it at www.osc.edu/lam.html. LAM is needed for the 
+parallel execution of the code on multiple machines. You will have to write a ``hostfile'' containing the 
+names of computers you can do computations on.
+
+Now, make the computers ready for LAM/MPI by typing ``lamboot -v hostfile'', and hopefully it will
+work. If not, consult the LAM/MPI documentation or your system adminstrator.
+
+To start the Monte Carlo, simply type ``mpirun -v -c 5 mc_general''. You will see a lot of information
+being displayed, some files will be created. You can follow the output of all chains on the screen. 
+If there is no further output after a while, something has gone wrong! 
+
+Now (you can do this while the chains are running) take a look at the file ``montecarlo_chainx.dat'',
+where x is the chain number. You will find the output of each chain in the format described in the
+companion paper. More output will be written here as time progresses.
+
+Take a look at ``progress.dat'', which will give you some general information on all chains. At first,
+this may not be really informative. Once every chain contains 30 points (this is set by RMIN_POINTS in 
+mc_general.cc), the Gelman-Rubin-Statistic will be written to this file. A more condensed version is
+also written to ``gelmanRubin.txt'', suitable for plotting.
+
+Once a chain has computed 100 points (set by ``BEGINCOVUPDATE'' in mc_general.cc), the estimated
+covariance Matrix for the chain will be output to ``covMatrix.dat'' including the overall scaling factor.
+The estimated covariance matrix will be recomputed every 25 steps (set by ``UPDATE_TIME'').
+
+After each chain has computed about 1000 models, the Gelman-Rubin R-statistic is probably less than 1.2 for
+all parameters and the driver will  fix the covariance matrix and the overall scaling. This will be indicated 
+in the file ``covMatrix.dat''. In ``montecarlo_chainx.dat'', a '0' will be written as the last entry in
+the line where we froze in. All points previous to this one should be discarded (happens automatically
+if you are using the ``distill'' function of the graphical user interface of cmbeasy).
+
+Depending on processor speed, you will be able to compute about 1400 models per chain in 24 hours. 
+
+Having computed about 5000 models per chain (enough for illustrative purposes), you can take a look
+at your output using the graphical user interface of cmbeasy.
+
+If you have made it this far, then congratulations! You have just run your first Markov Chain Monte Carlo 
+simuation!
+
+2.) Using the graphical user interface to analyze MCMC output:
+--------------------------------------------------------------
+If you have not yet run your own chain, you can use the chain data provided in the package 
+(an ordinary LCDM model), located in the /resources directory.
+
+Start the graphical user interface (gui) by typing ``cmbeasy''.
+
+First, you will need to distill the chains into a single file to speed up the analysis.
+But don't be scared, distilling the chain output is easy:
+
+a) Select ``distill'' from the likelihood menu
+
+b) Choose the chain data files you would like to use (using the example files shipped with cmbeasy,
+ one would select ``montecarlo_chain1.dat, montecarlo_chain2.dat,montecarlo_chain3.dat,
+montecarlo_chain4.dat'' in the resources directory; hold the control-key down while clicking
+on the file names for multiple selections).
+
+c) Choose a name for the binary output file (``.mcc'' will be appended automatically)
+
+The chain data files will then be merged into one binary file ending in ``.mcc''. For each chain,
+the models before freeze in are discarded automatically.
+
+Having distilled the raw data,
+the ``.mcc'' file just generated automatically becomes the active file. You may choose any 
+other ``.mcc'' file on disc by selecting ``load likelihood'' from the ``likelihood'' menu. Loading a ``.mcc'' file
+just means that it will become the active one for plotting. 
+
+On the ``likelihood'' tab in the lower part of the main window, you may 
+now specify the columns (counting from zero) in the data files corresponding to the axis
+of the likelihood plot. Pressing the ``auto adapt'' button will conveniently adjust the plot ranges
+to the range of parameters explored by the chains (you can of course select any range you like). 
+On pressing the ``draw'' button, the ``.mcc'' file will be scanned and  the discrete parameter points
+will be smeared out by a Gaussian. The relative width of this function can be controlled
+by the value of ``smear''.  The resolution determines the quality of the output both on the screen
+and as  a postscript file.  The axis labels accept LaTeX like input, that is parsed by a 
+rather elementary engine. Yet expressions like ``sigma_8^{th.}'' are processed. 
+The output willbe displayed in the upper main window in the tab ``Likeli-2D'' or ``Likeli-1D'' depending
+on the type of likelihood plot you have selected.
+
+Probably the best way to get to know the gui is by playing around with it a little bit. 
+
+
+3.) Using the distill command to distill the files
+-----------------------------------------------------
+
+If you do not wish to use the graphical user interface to process the data,
+you may  find the "distill" command in the bin directory useful.
+The syntax is as follows:
+
+> distill file1 file2 file3 (...) outputfilename
+
+It reads in all input files file1, file2 etc. and merges the
+file into one text and one binary output file called
+outputfilename.dat and outputfilename.mcc .
+
+Before merging, it removes all data of each chain taken before
+freeze-in. 
+
+
+4.) Modifying the code to test other models:
+---------------------------------------------
+
+All variables controlling the driver, such as the number of
+cosmological parameters, their boundaries, etc. are located in the top
+lines of the example driver ``mc_general.cc''. Other than modifying
+the boundaries (and initial step sizes) of parameter space, there
+should be no need to modify the master() routine. In essence, the master
+is merely responsible for coordinating all the chains and is not
+concerned with the computation of a model or its likelihood at all.
+
+The slave() receives the parameters for one model, computes it and
+calculates the likelihood with respect to measurements. Therefore,
+when running different cosmologies, the setup in slave() needs to be
+changed. For instance ``Cosmos'' should be replaced by ``QuintCosmos''
+for scalar dark energy. If you write your own routine to find the 
+parameters of you own model, you will only need to modify the slave() routine
+and the number of parameters defined in master().
+

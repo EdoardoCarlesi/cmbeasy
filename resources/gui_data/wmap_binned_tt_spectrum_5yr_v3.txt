@@ -1,0 +1,77 @@
+# Wilkinson Microwave Anisotropy Probe (WMAP) 5-year data release.
+# WMAP Five-Year Binned Combined TT Power Spectrum, version 3.0 (February 2008)
+#
+# References: - WMAP Explanatory Supplement: http://lambda.gsfc.nasa.gov/
+#             - Nolta, et.al. (2008)
+#             - Dunkley, et.al. (2008)
+#
+# Column 1 = mean multipole moment l for the bin
+# Column 2 = smallest l contributing to the bin
+# Column 3 = largest l contributing to the bin
+# Column 4 = mean value of TT power spectrum (=  l(l+1)/2pi * C_l) in the bin,
+#             units = uK^2
+# Column 5 = 'Error' for binned value, as computed from diagonal terms of the
+#             Fisher matrix, units = uK^2.
+#             Included only as an estimate of their magnitude.  The
+#             multipole moments are slightly coupled, so a correct
+#             treatment of errors requires use of the entire Fisher matrix.
+# Column 6 = portion of column5 error attributed to measurement errors,
+#             in "2SN + NN" form, units = uK^2.
+# Column 7 = portion of column5 error attributed to cosmic variance, 
+#             assuming the best-fit LCDM model described in
+#             "Five-Year WMAP Observations: Likelihoods and Parameters from the WMAP data", 
+#              Dunkley, et al. (2008). Units = uK^2.
+# 
+# The 5-yr TT power spectrum is produced by combining the 
+# Maximum Likelihood estimated spectrum from l = 2-32 with the 
+# pseudo-C_l based cross-power spectra for l > 32.  The errors 
+# quoted in column 5 for bins containing l <= 32 data reflect 
+# those from the pseudo-C_l analysis rather than the asymmetric
+# ML confidence limits.
+# 
+# Revision History:
+#  v3  : initial release
+# 
+     2     2     2      213.4069      934.2714        5.5978      934.2546
+     3     3     3     1038.6573      728.9514        5.9727      728.9269
+     4     4     5     1100.3743      390.4906        4.5155      390.4645
+     6     6     7     1062.4196      297.7189        4.8714      297.6790
+     9     8    11      716.0890      166.2624        3.8438      166.2180
+    13    12    14      807.9301      162.8947        5.0083      162.8177
+    17    15    19      847.3880      114.7429        4.4141      114.6580
+    22    20    24      711.3601      108.0301        5.1021      107.9096
+    27    25    30     1011.1188       96.0599        5.3671       95.9099
+    33    31    36     1132.0188       95.7004        6.1606       95.5019
+    40    37    44     1446.2292       84.1077        6.1674       83.8812
+    48    45    52     1380.9037       86.7010        7.1537       86.4053
+    56    53    60     1538.9440       90.2290        8.1902       89.8566
+    65    61    70     1781.8671       84.9924        8.4316       84.5731
+    76    71    81     2004.2120       86.6375        9.3559       86.1309
+    87    82    92     2365.9053       93.2742       10.8412       92.6421
+    98    93   104     2628.3079       96.6314       11.9885       95.8849
+   111   105   117     3103.9575      100.9343       13.3242      100.0510
+   125   118   132     3566.8774      102.5552       14.4206      101.5363
+   140   133   147     4334.7671      111.3268       16.6930      110.0682
+   155   148   163     4541.6587      115.3210       18.4996      113.8275
+   172   164   181     5018.5601      114.4660       19.8558      112.7308
+   191   182   200     5533.7666      114.7467       21.8032      112.6562
+   210   201   220     5705.3315      111.5759       23.5736      109.0571
+   231   221   241     5728.4888      104.5843       25.0191      101.5476
+   253   242   265     5420.0488       89.6335       24.9488       86.0913
+   278   266   290     4854.3955       75.9725       25.3876       71.6051
+   304   291   317     3961.0706       59.9108       24.6650       54.5980
+   332   318   347     3014.2271       44.5024       23.0944       38.0409
+   363   348   379     2257.2129       34.1669       22.1615       26.0047
+   397   380   415     1777.6381       29.1236       22.1847       18.8685
+   436   416   456     1837.4119       30.6315       25.1635       17.4667
+   479   457   502     2305.0667       36.8829       31.3181       19.4815
+   526   503   550     2504.2339       44.5134       38.2900       22.7006
+   575   551   600     2405.6277       50.4816       46.2832       20.1558
+   625   601   650     1971.3488       59.1527       56.9412       16.0232
+   675   651   700     1742.7089       75.0008       73.7412       13.6881
+   725   701   750     2073.5608      101.2635      100.2044       14.6069
+   775   751   800     2120.3503      137.7084      136.6904       16.7139
+   825   801   850     2427.3867      183.9944      183.2058       17.0169
+   875   851   900     2553.2637      241.9101      241.4771       14.4688
+   925   901   950     2300.8674      314.9259      314.7498       10.5286
+   975   951  1000     1388.7662      410.6368      410.5685        7.4883

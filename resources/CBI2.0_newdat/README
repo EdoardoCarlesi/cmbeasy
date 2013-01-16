@@ -1,0 +1,15 @@
+This is the content from "CBI2.0_newdat.tgz (revised 2006 Aug 25)"
+as published at http://www.astro.caltech.edu/~tjp/CBI/data2004/.
+
+From this site:
+
+> Here we present supplementary numerical data for the CBI observations reported by A. C. S. Readhead
+> et al. (2004 ApJ, 609, 498-512, preprinted as astro-ph/0402359). If you use these data in a
+> publication, please cite the appropriate papers and also give the URL of this web page and the date
+> of publication (given at the bottom of this page).
+> The CBI even binning data (bins 2 to 14) formatted for use with the COSMOMC Markov Chain Monte Carlo
+> package (Lewis & Bridle 2002, Phys. Rev. D, 66, 103511) can be found in the compressed tar file
+> CBI2.0_newdat.tgz (revised 2006 Aug 25). Note: this replaces the file cbi2.0.tgz (revised 2004 Mar
+> 3), in which the Fisher matrix was incorrectly transformed for the offset-lognormal approximation.
+> Thanks to Loison Hoi for pointing out the error. For more information, see the discussion in the
+> CosmoCoffee CMB forum.

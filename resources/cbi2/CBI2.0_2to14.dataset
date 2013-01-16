@@ -1,0 +1,25 @@
+#CBI 2000+2001 results in COSMOMC format
+#included bands: 2 to 14 as reported
+#in Readhead et al. (astro-ph/0402359)
+#for more info email: contaldi@cita.utoronto.ca
+name = CBI2.0_2to14
+num_points =   13
+calib_uncertainty =  0.026
+beam_uncertainty = F
+N_inv = data/CBI2.0_2to14_matrix.dat
+xfactors = data/CBI2.0_2to14_x.dat
+window_dir = data/windows
+#value, minus error, plus error
+ data1 =    2059    717    717
+ data2 =    1688    457    457
+ data3 =    2415    545    545
+ data4 =    1562    391    391
+ data5 =    2201    490    490
+ data6 =    2056    436    436
+ data7 =    1158    396    396
+ data8 =     797    275    275
+ data9 =     780    263    263
+data10 =     586    278    278
+data11 =    1166    361    361
+data12 =     196    223    223
+data13 =      -4    203    203

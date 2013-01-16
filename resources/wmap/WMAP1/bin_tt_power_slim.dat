@@ -1,0 +1,56 @@
+# Wilkinson Microwave Anisotropy Probe (WMAP) year 1 data release.
+# WMAP One-Year Binned Combined TT Power Spectrum, version 1 (Feb 2003)
+# Reference = WMAP Explanatory Supplement: http://lambda.gsfc.nasa.gov/
+# Column 1 = mean multipole moment l for the bin
+# Column 2 = mean value of TT power spectrum (=  l(l+1)/2pi * C_l) in the bin,
+#             units = uK^2
+# Column 3 = 'Error' for binned value, as computed from diagonal terms of the
+#             Fisher matrix, units = uK^2.
+#             Included only as an estimate of their magnitude.  The
+#             multipole moments are slightly coupled, so a correct
+#             treatment of errors requires use of the entire Fisher matrix.
+# Column 4 = portion of column3 error attributed to measurement errors,
+#             units = uK^2.
+# Column 5 = portion of column3 error attributed to cosmic variance, 
+#             assuming the best-fit running index model described in
+#             "First Year WMAP Results: Determination of Cosmological 
+#              Parameters", Spergel et al. (2003). Units = uK^2.
+# 
+    2     123.3820     762.6369       
+    3     611.7750     608.1737       
+    4    1006.6580     331.9451       
+    6     763.1490     255.8872      
+    9     828.1140     143.4565      
+   13     793.4959     141.6044       
+   17     846.3810     101.1075       
+   22     725.9430      97.0144      
+   27    1021.4265      88.0066      
+   33    1159.3345      89.0266      
+   40    1427.4663      78.9515     
+   48    1302.6437      81.9152      
+   56    1480.3638      85.6639    
+   65    1727.6619      81.1759     
+   76    1950.7992      83.2343      
+   87    2316.2073      90.0005     
+   98    2552.2441      90.5754     
+  111    3022.9854      88.7501     
+  125    3384.8655      90.3236     
+  140    4066.6082      98.2183    
+  155    4377.6143     102.0565     
+  172    4791.3369     101.8637    
+  191    5401.5767     102.8718    
+  210    5364.7920     101.8660     
+  231    5643.2900      96.7197    
+  253    5220.8208      84.7271     
+  278    4734.9336      74.6020      
+  304    3773.4531      62.8336     
+  332    2823.9150      52.4309      
+  363    2125.0366      48.2643     
+  397    1667.9229      50.2734     
+  436    1839.2437      60.3456      
+  479    2126.8167      78.0644     
+  529    2537.2615     103.4648     
+  587    2154.7075     139.9985     
+  659    1742.6758     208.9749    
+  752    1832.2490     357.6029    
+  853    2995.9221     760.4521  

@@ -1,0 +1,4 @@
+*.txt
+*.plt
+*.dat
+!readme_output.txt

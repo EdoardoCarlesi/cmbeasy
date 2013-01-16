@@ -1,0 +1,944 @@
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>DesignConfigurationDialog</class>
+ <widget class="QDialog" name="DesignConfigurationDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>486</width>
+    <height>646</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>MyDialog2</string>
+  </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
+  <layout class="QHBoxLayout" >
+   <property name="margin" >
+    <number>8</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QListWidget" name="listBox" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>7</hsizetype>
+       <vsizetype>7</vsizetype>
+       <horstretch>120</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize" >
+      <size>
+       <width>100</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>1640</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="editTriggers" >
+      <set>QAbstractItemView::AllEditTriggers</set>
+     </property>
+     <property name="tabKeyNavigation" >
+      <bool>true</bool>
+     </property>
+     <property name="alternatingRowColors" >
+      <bool>true</bool>
+     </property>
+     <property name="resizeMode" >
+      <enum>QListView::Adjust</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QTabWidget" name="tabWidget" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>7</hsizetype>
+         <vsizetype>7</vsizetype>
+         <horstretch>13</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <widget class="QWidget" name="Widget2" >
+        <attribute name="title" >
+         <string>Main</string>
+        </attribute>
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>8</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="groupBox1" >
+           <property name="title" >
+            <string>Geometry and Sizes</string>
+           </property>
+           <layout class="QVBoxLayout" >
+            <property name="margin" >
+             <number>-1</number>
+            </property>
+            <property name="spacing" >
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QGridLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item row="1" column="1" >
+               <widget class="QSpinBox" name="BottomMargin" >
+                <property name="value" >
+                 <number>20</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2" >
+               <widget class="QLabel" name="textLabel1_3_2" >
+                <property name="text" >
+                 <string>y-axis right offset:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" >
+               <widget class="QLabel" name="textLabel1_3_2_3" >
+                <property name="text" >
+                 <string>x-axis bottom offset:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3" >
+               <widget class="QSpinBox" name="TopMargin" >
+                <property name="value" >
+                 <number>20</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1" >
+               <widget class="QSpinBox" name="LeftMargin" >
+                <property name="value" >
+                 <number>20</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3" >
+               <widget class="QSpinBox" name="RightMargin" >
+                <property name="value" >
+                 <number>20</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2" >
+               <widget class="QLabel" name="textLabel1_3_2_2" >
+                <property name="text" >
+                 <string>x-axis top offset:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" >
+               <widget class="QLabel" name="textLabel1_3" >
+                <property name="text" >
+                 <string>y-axis left offset:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4" >
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="4" >
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="textLabel1" >
+                <property name="toolTip" >
+                 <string>Size of custom paper (...)</string>
+                </property>
+                <property name="whatsThis" >
+                 <string>CMBEASY currently &quot;knows&quot; the following paper sizes:
+A4 and US Letter.
+
+However, you may want to have a different geometry. 
+Therefore, CMBEASY identifies all paper sizes that 
+are &quot;unknown&quot; (i.e. A0, etc.) as one custom size.
+Here, you can specify this custom size in mm.</string>
+                </property>
+                <property name="text" >
+                 <string>Custom Paper Format:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="XPaper" >
+                <property name="sizePolicy" >
+                 <sizepolicy>
+                  <hsizetype>5</hsizetype>
+                  <vsizetype>0</vsizetype>
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="textLabel2" >
+                <property name="text" >
+                 <string>&lt;b>x&lt;/b></string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="YPaper" >
+                <property name="sizePolicy" >
+                 <sizepolicy>
+                  <hsizetype>5</hsizetype>
+                  <vsizetype>0</vsizetype>
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="textLabel1_4" >
+                <property name="text" >
+                 <string>in mm</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox3" >
+           <property name="title" >
+            <string>Axis Labels</string>
+           </property>
+           <layout class="QGridLayout" >
+            <property name="margin" >
+             <number>-1</number>
+            </property>
+            <property name="spacing" >
+             <number>0</number>
+            </property>
+            <item row="4" column="3" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="3" column="3" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="2" colspan="2" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="4" column="1" colspan="2" >
+             <widget class="QLineEdit" name="YOffset" />
+            </item>
+            <item row="3" column="1" colspan="2" >
+             <widget class="QLineEdit" name="XOffset" />
+            </item>
+            <item row="0" column="1" >
+             <widget class="QSpinBox" name="AxisLabelSize" >
+              <property name="maximum" >
+               <number>500</number>
+              </property>
+              <property name="minimum" >
+               <number>20</number>
+              </property>
+              <property name="singleStep" >
+               <number>10</number>
+              </property>
+              <property name="value" >
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" >
+             <widget class="QLabel" name="textLabel5_5_2_2" >
+              <property name="text" >
+               <string>Y-Label Text:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" >
+             <widget class="QLabel" name="textLabel5_5" >
+              <property name="text" >
+               <string>X-Label Offset:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" >
+             <widget class="QLabel" name="textLabel5_6" >
+              <property name="text" >
+               <string>Y-Label Offset:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" colspan="3" >
+             <widget class="QLineEdit" name="YLabelText" />
+            </item>
+            <item row="0" column="0" >
+             <widget class="QLabel" name="textLabel3" >
+              <property name="text" >
+               <string>Axis label size:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" >
+             <widget class="QLabel" name="textLabel5_5_2" >
+              <property name="text" >
+               <string>X-Label Text:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" colspan="3" >
+             <widget class="QLineEdit" name="XLabelText" />
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox2" >
+           <property name="title" >
+            <string>Ticks</string>
+           </property>
+           <layout class="QHBoxLayout" >
+            <property name="margin" >
+             <number>-1</number>
+            </property>
+            <property name="spacing" >
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="textLabel3_2" >
+                  <property name="text" >
+                   <string>Tick label size:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="TickLabelSize" >
+                  <property name="maximum" >
+                   <number>500</number>
+                  </property>
+                  <property name="minimum" >
+                   <number>20</number>
+                  </property>
+                  <property name="singleStep" >
+                   <number>10</number>
+                  </property>
+                  <property name="value" >
+                   <number>100</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer>
+                  <property name="orientation" >
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType" >
+                   <enum>QSizePolicy::Expanding</enum>
+                  </property>
+                  <property name="sizeHint" >
+                   <size>
+                    <width>309</width>
+                    <height>21</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QGridLayout" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <item row="0" column="0" >
+                 <widget class="QLabel" name="textLabel1_2" >
+                  <property name="text" >
+                   <string>x-axis tick mark format:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2" >
+                 <widget class="QLabel" name="textLabel3_4" >
+                  <property name="text" >
+                   <string>x-tick precision:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="3" >
+                 <widget class="QSpinBox" name="YPrecision" >
+                  <property name="maximum" >
+                   <number>10</number>
+                  </property>
+                  <property name="minimum" >
+                   <number>1</number>
+                  </property>
+                  <property name="singleStep" >
+                   <number>1</number>
+                  </property>
+                  <property name="value" >
+                   <number>2</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2" >
+                 <widget class="QLabel" name="textLabel3_4_2" >
+                  <property name="text" >
+                   <string>y-tick precision:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1" >
+                 <widget class="QComboBox" name="XAxisMarks" />
+                </item>
+                <item row="1" column="0" >
+                 <widget class="QLabel" name="textLabel1_2_2" >
+                  <property name="text" >
+                   <string>y-axis tick mark format:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1" >
+                 <widget class="QComboBox" name="YAxisMarks" />
+                </item>
+                <item row="0" column="3" >
+                 <widget class="QSpinBox" name="XPrecision" >
+                  <property name="maximum" >
+                   <number>10</number>
+                  </property>
+                  <property name="minimum" >
+                   <number>1</number>
+                  </property>
+                  <property name="singleStep" >
+                   <number>1</number>
+                  </property>
+                  <property name="value" >
+                   <number>2</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="AutomaticTick" >
+                <property name="enabled" >
+                 <bool>true</bool>
+                </property>
+                <property name="text" >
+                 <string>Determine tick marks automatically</string>
+                </property>
+                <property name="checked" >
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QGridLayout" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <item row="0" column="1" >
+                 <widget class="QLineEdit" name="StartX" />
+                </item>
+                <item row="1" column="3" >
+                 <widget class="QLineEdit" name="YSpacing" />
+                </item>
+                <item row="0" column="3" >
+                 <widget class="QLineEdit" name="XSpacing" />
+                </item>
+                <item row="1" column="0" >
+                 <widget class="QLabel" name="textLabel5_2" >
+                  <property name="text" >
+                   <string>Start Y:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1" >
+                 <widget class="QLineEdit" name="StartY" />
+                </item>
+                <item row="1" column="2" >
+                 <widget class="QLabel" name="textLabel5_3" >
+                  <property name="text" >
+                   <string>Y-Tick Spacing:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2" >
+                 <widget class="QLabel" name="textLabel5_4" >
+                  <property name="text" >
+                   <string>X-Tick spacing:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0" >
+                 <widget class="QLabel" name="textLabel5" >
+                  <property name="text" >
+                   <string>Start X:</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="TabPage" >
+        <attribute name="title" >
+         <string>Lines</string>
+        </attribute>
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>8</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="groupBox4" >
+           <property name="title" >
+            <string>Line widths</string>
+           </property>
+           <layout class="QGridLayout" >
+            <property name="margin" >
+             <number>8</number>
+            </property>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item row="0" column="0" >
+             <widget class="QLabel" name="textLabel3_3" >
+              <property name="text" >
+               <string>Frame:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" >
+             <widget class="QSpinBox" name="FrameLineWidth" >
+              <property name="maximum" >
+               <number>500</number>
+              </property>
+              <property name="minimum" >
+               <number>20</number>
+              </property>
+              <property name="singleStep" >
+               <number>10</number>
+              </property>
+              <property name="value" >
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>121</width>
+                <height>21</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="2" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>121</width>
+                <height>21</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="1" >
+             <widget class="QSpinBox" name="CurveLineWidth" >
+              <property name="maximum" >
+               <number>500</number>
+              </property>
+              <property name="minimum" >
+               <number>20</number>
+              </property>
+              <property name="singleStep" >
+               <number>10</number>
+              </property>
+              <property name="value" >
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" >
+             <widget class="QLabel" name="textLabel3_3_2" >
+              <property name="text" >
+               <string>Curve:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" >
+             <widget class="QLabel" name="textLabel3_3_3" >
+              <property name="text" >
+               <string>Ticks:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" >
+             <widget class="QSpinBox" name="TicksLineWidth" >
+              <property name="maximum" >
+               <number>500</number>
+              </property>
+              <property name="minimum" >
+               <number>20</number>
+              </property>
+              <property name="singleStep" >
+               <number>10</number>
+              </property>
+              <property name="value" >
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>121</width>
+                <height>21</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType" >
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>21</width>
+             <height>161</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="buttonHelp" >
+         <property name="text" >
+          <string>&amp;Help</string>
+         </property>
+         <property name="shortcut" >
+          <string>F1</string>
+         </property>
+         <property name="autoDefault" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="saveButton" >
+         <property name="text" >
+          <string>Save</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonOk" >
+         <property name="text" >
+          <string>&amp;OK</string>
+         </property>
+         <property name="shortcut" >
+          <string/>
+         </property>
+         <property name="autoDefault" >
+          <bool>true</bool>
+         </property>
+         <property name="default" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonCancel" >
+         <property name="text" >
+          <string>&amp;Cancel</string>
+         </property>
+         <property name="shortcut" >
+          <string/>
+         </property>
+         <property name="autoDefault" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+  <widget class="QWidget" name="widget" >
+   <property name="geometry" >
+    <rect>
+     <x>95</x>
+     <y>9</y>
+     <width>390</width>
+     <height>628</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <pixmapfunction></pixmapfunction>
+ <tabstops>
+  <tabstop>listBox</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>LeftMargin</tabstop>
+  <tabstop>RightMargin</tabstop>
+  <tabstop>BottomMargin</tabstop>
+  <tabstop>TopMargin</tabstop>
+  <tabstop>XPaper</tabstop>
+  <tabstop>YPaper</tabstop>
+  <tabstop>AxisLabelSize</tabstop>
+  <tabstop>XLabelText</tabstop>
+  <tabstop>YLabelText</tabstop>
+  <tabstop>XOffset</tabstop>
+  <tabstop>YOffset</tabstop>
+  <tabstop>TickLabelSize</tabstop>
+  <tabstop>XAxisMarks</tabstop>
+  <tabstop>YAxisMarks</tabstop>
+  <tabstop>XPrecision</tabstop>
+  <tabstop>YPrecision</tabstop>
+  <tabstop>AutomaticTick</tabstop>
+  <tabstop>StartX</tabstop>
+  <tabstop>XSpacing</tabstop>
+  <tabstop>StartY</tabstop>
+  <tabstop>YSpacing</tabstop>
+  <tabstop>buttonHelp</tabstop>
+  <tabstop>buttonOk</tabstop>
+  <tabstop>buttonCancel</tabstop>
+  <tabstop>FrameLineWidth</tabstop>
+  <tabstop>TicksLineWidth</tabstop>
+  <tabstop>CurveLineWidth</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonOk</sender>
+   <signal>clicked()</signal>
+   <receiver>DesignConfigurationDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>355</x>
+     <y>625</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>261</x>
+     <y>611</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>DesignConfigurationDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>434</x>
+     <y>624</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>214</x>
+     <y>636</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

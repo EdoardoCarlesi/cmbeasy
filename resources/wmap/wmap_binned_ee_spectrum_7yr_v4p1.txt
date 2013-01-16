@@ -1,0 +1,37 @@
+# Wilkinson Microwave Anisotropy Probe (WMAP) 7-year data release.
+# WMAP 7-Year Combined EE Power Spectrum, version 4.1 (October 2010)
+#
+# References: - WMAP Explanatory Supplement: http://lambda.gsfc.nasa.gov/
+#             - Larson, et.al. (2010)
+#
+# Column 1 = mean multipole moment l for the bin.
+# Column 2 = smallest l contributing to the bin.
+# Column 3 = largest l contributing to the bin.
+# Column 4 = mean value of EE power spectrum, l(l+1)/2pi * C_l, in the bin,
+#            units = uK^2.  The mean is weighted.
+# Column 5 = 'Error' for binned value, as computed from diagonal terms of the
+#            Fisher matrix, units = uK^2.
+#            These are included only as an estimate of their magnitude.
+#            The multipole moments are slightly coupled, so a correct
+#            treatment of errors requires use of the entire Fisher matrix
+#            or the WMAP likelihood code.
+#            Additionally, because the error bars are Master estimates,
+#            they do not capture the asymmetry and non-Gaussianity
+#            of the likelihood for low multipole moments l.
+#
+    4     2     7        0.053096        0.031669
+   15     8    23        0.072469        0.032052
+   36    24    49        0.265279        0.090256
+   74    50    99        0.449684        0.199013
+  124   100   149        0.852253        0.531195
+  174   150   199       -0.138831        1.062734
+  224   200   249        2.025287        1.935839
+  274   250   299        7.472294        3.389182
+  324   300   349       23.351200        5.729822
+  374   350   399       31.763085        9.326557
+  424   400   449       21.099828       14.689601
+  474   450   499       32.100430       22.693411
+  549   500   599       17.191504       28.841038
+  674   600   749       73.279538       59.208589
+  824   750   899        2.818291      177.791585
+  962   900  1024     -391.240904      493.819840

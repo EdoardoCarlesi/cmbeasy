@@ -1,0 +1,61 @@
+# Wilkinson Microwave Anisotropy Probe (WMAP) 7-year data release.
+# WMAP 7-Year Combined TE Power Spectrum, version 4.1 (June 2010)
+#
+# References: - WMAP Explanatory Supplement: http://lambda.gsfc.nasa.gov/
+#             - Larson, et.al. (2010)
+#
+# Column 1 = mean multipole moment l for the bin
+# Column 2 = smallest l contributing to the bin
+# Column 3 = largest l contributing to the bin
+# Column 4 = mean value of TE power spectrum (l+1)/2pi * C_l in the bin,
+#             not l(l+1)/2pi * Cl,
+#             units = uK^2.  The mean is unweighted.
+# Column 5 = 'Error' for binned value, as computed from diagonal terms of the
+#             Fisher matrix, units = uK^2.
+#             Included only as an estimate of their magnitude.  The
+#             multipole moments are slightly coupled, so a correct
+#             treatment of errors requires use of the entire Fisher matrix.
+# Column 6 = portion of column5 error attributed to measurement errors,
+#             in "2SN + NN" form, units = uK^2.
+# Column 7 = portion of column5 error attributed to cosmic variance, 
+#             assuming the best-fit LCDM 
+#
+# The first bin has been modified using the pixel likelihood code directly.  Mean
+# and error bar for this bin are based on the conditional distribution, with the
+# other multipoles held fixed at the best fit (7-year, WMAP likelihood version 4.0)
+# LCDM theory spectrum.  Only the full error is computed for this bin, not the 
+# cosmic variance and noise terms separately.
+#
+     4     2     7       0.586138       0.305578       0.000000       0.000000
+    10     8    13       0.034984       0.164419       0.158183       0.044856
+    17    14    20       0.116849       0.112394       0.111580       0.013504
+    22    21    24      -0.099555       0.131266       0.130476       0.014373
+    27    25    30       0.149545       0.100146       0.099402       0.012182
+    33    31    36      -0.030612       0.094729       0.093852       0.012859
+    40    37    44       0.028205       0.078756       0.077870       0.011776
+    48    45    52      -0.102938       0.076619       0.075574       0.012613
+    56    53    60       0.028907       0.075609       0.074394       0.013499
+    65    61    70      -0.007226       0.067444       0.066176       0.013016
+    76    71    81      -0.125172       0.064824       0.063417       0.013436
+    87    82    92      -0.205625       0.065952       0.064364       0.014385
+    98    93   104      -0.187864       0.064688       0.063049       0.014473
+   111   105   117      -0.234962       0.064018       0.062412       0.014251
+   125   118   132      -0.354004       0.061660       0.060251       0.013102
+   140   133   147      -0.383106       0.063815       0.062620       0.012294
+   155   148   163      -0.247871       0.063738       0.062869       0.010487
+   172   164   181      -0.320943       0.061802       0.061283       0.007993
+   191   182   200      -0.185754       0.061584       0.061309       0.005812
+   210   201   220      -0.020047       0.060960       0.060771       0.004796
+   231   221   241       0.142379       0.059764       0.059492       0.005697
+   253   242   265       0.205266       0.055301       0.054843       0.007102
+   278   266   290       0.317835       0.052421       0.051755       0.008329
+   304   291   317       0.349794       0.047647       0.046910       0.008352
+   332   318   347       0.352016       0.041813       0.041186       0.007219
+   363   348   379       0.224984       0.037726       0.037301       0.005648
+   397   380   415      -0.011108       0.035577       0.035332       0.004169
+   436   416   456      -0.212829       0.037725       0.037579       0.003314
+   479   457   502      -0.114843       0.043812       0.043741       0.002481
+   529   503   555      -0.100146       0.051789       0.051760       0.001717
+   587   556   619       0.053283       0.057676       0.057648       0.001807
+   659   620   698      -0.127973       0.069600       0.069577       0.001793
+   749   699   800      -0.146864       0.099730       0.099720       0.001402

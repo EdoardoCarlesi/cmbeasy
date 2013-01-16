@@ -1,0 +1,778 @@
+<ui version="4.0" >
+ <class>ParameterDockForm</class>
+ <widget class="QWidget" name="ParameterDockForm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>323</width>
+    <height>338</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string/>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <item>
+    <widget class="QWidget" native="1" name="layoutWidget" >
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QTabWidget" name="ParameterTab" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="currentIndex" >
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="tab" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>283</width>
+           <height>189</height>
+          </rect>
+         </property>
+         <attribute name="title" >
+          <string>Background</string>
+         </attribute>
+         <layout class="QVBoxLayout" >
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <property name="margin" >
+           <number>8</number>
+          </property>
+          <item>
+           <layout class="QGridLayout" >
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item row="0" column="3" >
+             <widget class="QLineEdit" name="ob" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1" >
+             <widget class="QLineEdit" name="nnu" />
+            </item>
+            <item row="1" column="3" >
+             <widget class="QLineEdit" name="ocdm" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" >
+             <widget class="QLineEdit" name="obh2" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="toolTip" >
+               <string>Omega baryon times h^2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" >
+             <widget class="QLineEdit" name="hubble" />
+            </item>
+            <item row="3" column="2" >
+             <widget class="QLabel" name="OnuLabel" >
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="pixmap" >
+               <pixmap/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" >
+             <widget class="QLabel" name="TextLabel1_2" >
+              <property name="text" >
+               <string>N_nu</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" >
+             <widget class="QLabel" name="ObLabel" >
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="textFormat" >
+               <enum>Qt::AutoText</enum>
+              </property>
+              <property name="pixmap" >
+               <pixmap/>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" >
+             <widget class="QLabel" name="Omh2Label" >
+              <property name="text" >
+               <string>O_mh2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2" >
+             <widget class="QLabel" name="OlambdaLabel" >
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="pixmap" >
+               <pixmap/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3" >
+             <widget class="QLineEdit" name="onu" />
+            </item>
+            <item row="1" column="1" >
+             <widget class="QLineEdit" name="ocdmh2" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip" >
+               <string>Omega cdm times h^2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3" >
+             <widget class="QLineEdit" name="olambda" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip" >
+               <string>Dark energy Omega [more]</string>
+              </property>
+              <property name="whatsThis" >
+               <string>The amount of dark energy today is given by this value. The &lt;em>type&lt;/em> of dark energy is specified in the dark energy page of this tab widget.</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" >
+             <widget class="QLabel" name="OmLabel" >
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="pixmap" >
+               <pixmap/>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" >
+             <widget class="QLabel" name="Obh2Label" >
+              <property name="whatsThis" >
+               <string/>
+              </property>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="textFormat" >
+               <enum>Qt::RichText</enum>
+              </property>
+              <property name="pixmap" >
+               <pixmap/>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" >
+             <widget class="QLabel" name="TextLabel3" >
+              <property name="text" >
+               <string>h</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0" >
+             <size>
+              <width>20</width>
+              <height>31</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_2" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>283</width>
+           <height>189</height>
+          </rect>
+         </property>
+         <attribute name="title" >
+          <string>Spectral</string>
+         </attribute>
+         <layout class="QGridLayout" >
+          <property name="margin" >
+           <number>8</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item row="2" column="0" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0" >
+             <size>
+              <width>20</width>
+              <height>21</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0" >
+           <layout class="QHBoxLayout" >
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QCheckBox" name="stgiven" >
+              <property name="enabled" >
+               <bool>true</bool>
+              </property>
+              <property name="toolTip" >
+               <string>Tensor / Scalar Quadrupole automatic [more]</string>
+              </property>
+              <property name="whatsThis" >
+               <string>Fix the tensor to scalar quadrupole to be 7*(1-n_s).</string>
+              </property>
+              <property name="text" >
+               <string>T/S fixed</string>
+              </property>
+              <property name="checked" >
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+              <property name="sizeHint" stdset="0" >
+               <size>
+                <width>21</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="tslabel" >
+              <property name="enabled" >
+               <bool>true</bool>
+              </property>
+              <property name="toolTip" >
+               <string/>
+              </property>
+              <property name="text" >
+               <string>T/S</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="stRatio" >
+              <property name="enabled" >
+               <bool>false</bool>
+              </property>
+              <property name="toolTip" >
+               <string>Explicit value for Tensor / Scalar ratio</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0" >
+           <layout class="QGridLayout" >
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item row="1" column="1" >
+             <widget class="QLineEdit" name="spectralTensor" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>10</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="toolTip" >
+               <string>Tensor spectral index [more]</string>
+              </property>
+              <property name="whatsThis" >
+               <string>Power of the initial tensor fluctuations. </string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" >
+             <widget class="QLabel" name="TextLabel2_2" >
+              <property name="toolTip" >
+               <string/>
+              </property>
+              <property name="whatsThis" >
+               <string/>
+              </property>
+              <property name="text" >
+               <string>tau:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" >
+             <widget class="QLabel" name="ntlabel" >
+              <property name="text" >
+               <string>n_t</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" >
+             <widget class="QLabel" name="TextLabel1" >
+              <property name="text" >
+               <string>n_s</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" >
+             <widget class="QLineEdit" name="spectral" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>10</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="toolTip" >
+               <string>Scalar spectral index [more]</string>
+              </property>
+              <property name="whatsThis" >
+               <string>Power of the initial scalar fluctuation spectrum. For scale invariant initial fluctuations, this is 1.</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" >
+             <widget class="QLineEdit" name="reionize" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>10</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="toolTip" >
+               <string>Optical distance to last scattering surface [more]</string>
+              </property>
+              <property name="whatsThis" >
+               <string>The optdlss variable of CMBFAST</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_3" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>283</width>
+           <height>152</height>
+          </rect>
+         </property>
+         <attribute name="title" >
+          <string>Dark Energy</string>
+         </attribute>
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <property name="margin" >
+           <number>8</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" >
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="QuintType" >
+              <property name="title" >
+               <string>Type</string>
+              </property>
+              <layout class="QVBoxLayout" >
+               <property name="spacing" >
+                <number>0</number>
+               </property>
+               <property name="margin" >
+                <number>9</number>
+               </property>
+               <item>
+                <widget class="QRadioButton" name="LambdaType" >
+                 <property name="text" >
+                  <string>Lambda</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="LKTType" >
+                 <property name="toolTip" >
+                  <string>Leaping kinetic term quintessence [more]</string>
+                 </property>
+                 <property name="whatsThis" >
+                  <string>Versatile quintessence model. The kinetic term of the quintessence field makes a transition from k_min to 1. This increase is governed by the parameter alpha. The higher the value of alpha, the steeper the increase (try, for instance alpha =3 , instead of alpha=1). With this, you can effectivly controle the equation of state today. In addtion, this model can generically feature quintessence at last scattering, so feel free to tune and specify Omega at last scattering at some percent.</string>
+                 </property>
+                 <property name="text" >
+                  <string>LKT</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="IPLType" >
+                 <property name="text" >
+                  <string>IPL</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+              <property name="sizeHint" stdset="0" >
+               <size>
+                <width>16</width>
+                <height>88</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" >
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QCheckBox" name="TuneQuint" >
+              <property name="toolTip" >
+               <string>Ask quintessence to adjust parameters [more]</string>
+              </property>
+              <property name="whatsThis" >
+               <string>If checked, force quintessence to deduce all
+parameters it  can  from your choice of
+dark energy today, at last scattering etc.
+Usually, this is better than giving the parameters explicitly.</string>
+              </property>
+              <property name="text" >
+               <string>Tune</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="oqlslabel" >
+                <property name="text" >
+                 <string>Oq_ls:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="QuintLastS" />
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QGridLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item row="2" column="0" >
+               <widget class="QLabel" name="QParamText3" >
+                <property name="text" >
+                 <string>Parameter 3:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" >
+               <widget class="QLabel" name="QParamText1" >
+                <property name="text" >
+                 <string>Parameter 1:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1" >
+               <widget class="QLineEdit" name="QuintParam1" />
+              </item>
+              <item row="2" column="1" >
+               <widget class="QLineEdit" name="QuintParam3" />
+              </item>
+              <item row="1" column="0" >
+               <widget class="QLabel" name="QParamText2" >
+                <property name="text" >
+                 <string>Parameter 2:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1" >
+               <widget class="QLineEdit" name="QuintParam2" />
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox" >
+        <property name="title" >
+         <string>Basic Control</string>
+        </property>
+        <layout class="QHBoxLayout" >
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <property name="margin" >
+          <number>8</number>
+         </property>
+         <item>
+          <layout class="QGridLayout" >
+           <property name="margin" >
+            <number>0</number>
+           </property>
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <item row="1" column="1" >
+            <widget class="QCheckBox" name="Lensed" >
+             <property name="toolTip" >
+              <string>Calculate (linear) lensed spectrum</string>
+             </property>
+             <property name="text" >
+              <string>lensed</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" >
+            <widget class="QCheckBox" name="Scalar" >
+             <property name="toolTip" >
+              <string>Calculate scalar fluctuations</string>
+             </property>
+             <property name="text" >
+              <string>scalar</string>
+             </property>
+             <property name="checked" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" >
+            <widget class="QCheckBox" name="AdjustLambda" >
+             <property name="toolTip" >
+              <string>Adjust Energies for flat universe [more]</string>
+             </property>
+             <property name="whatsThis" >
+              <string>cmbeasy only supports flat (i.e. Omega =1) universes. 
+If checked, the energy densities of the vaccuum energy
+will (for convenience) be adjustet such that in total, Omega = 1.</string>
+             </property>
+             <property name="text" >
+              <string>adjust</string>
+             </property>
+             <property name="checked" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" >
+            <widget class="QCheckBox" name="PowerBox" >
+             <property name="toolTip" >
+              <string>Calculate cdm spectrum [more]</string>
+             </property>
+             <property name="whatsThis" >
+              <string>If this box is checked, the COBE normalized power spectrum is calculated.  This results in a longer computational time (approx 30 %).</string>
+             </property>
+             <property name="text" >
+              <string>power</string>
+             </property>
+             <property name="checked" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" >
+            <widget class="QCheckBox" name="Tensor" >
+             <property name="toolTip" >
+              <string>Calculate tensor perturbations</string>
+             </property>
+             <property name="text" >
+              <string>tensor</string>
+             </property>
+             <property name="checked" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1" >
+            <widget class="QCheckBox" name="isWMAPnorm" >
+             <property name="toolTip" >
+              <string>Normalize to WMAP</string>
+             </property>
+             <property name="text" >
+              <string>WMAP norm.</string>
+             </property>
+             <property name="checked" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2" >
+           <property name="title" >
+            <string>Gauge</string>
+           </property>
+           <layout class="QVBoxLayout" >
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <property name="margin" >
+             <number>8</number>
+            </property>
+            <item>
+             <widget class="QRadioButton" name="InvariantGauge" >
+              <property name="text" >
+               <string>invariant</string>
+              </property>
+              <property name="checked" >
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="SyncGauge" >
+              <property name="text" >
+               <string>synchronous</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

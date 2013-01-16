@@ -1,0 +1,77 @@
+#This is a cmbeasy control file
+#The syntax is simply KEY = VALUE
+#Value is usually a floating point parameter
+# For choices, it is "yes" and "no"
+
+# Sorry, no quintessence support using this
+# file yet.
+
+# First, we select which things to calculate
+# please note that the logic of these 4 switches
+# is explained in anisotropy/controlpanel.h
+# So much here: power always needs scalar
+
+scalar =  yes
+tensor  = no
+cmb = yes
+power = yes
+
+
+# Verbose output on screen and more data to dumped to disk
+verbose=false
+
+# try synchronous to feel the speed ups, if you like
+gauge = speedyInvariant
+#gauge = synchronous
+
+# initial conditions: adiabatic, isoCDM 
+
+initialcond = adiabatic
+
+# Initial scalar power spectrum, start and stop values and number
+# for instance specifying 3, 0.9 1.1 will give you n_s at 0.9, 1.0, 1.1
+n_number = 1
+n_start = 0.99
+n_stop = 0.99
+
+# running of spectral index, this is d n_s / dlnk just like in the WMAP papers
+n_running = 0
+
+# Now the parameters, matter content
+# please note that since v1.0.4, you can either specify omega_b, omega_cdm
+# or omega_b * h^2 and omega_matter (not cold dark matter, but cdm + baryon) * h^2
+# If you omit omega_vac, the omega_vac will be set to make the universe flat, i.e. 
+# omega_total = 1
+
+# So: Possibility one, uncomment if you like these better 
+# omega_b = 0.05
+# omega_cdm = 0.35
+# omega_vac = 0.6
+
+# Possibility 2:
+omega_bh2 = 0.024
+omega_mh2 = 0.14
+
+# Hubble parameter
+h = 0.72
+
+# Number of relativistic neutrino species
+nur = 3.04
+
+# helium fraction
+yhe = 0.24
+
+# Output file names
+scalarfile = plot.dat
+tensorfile = tensors.dat
+# please not that a .dat will be added to the cdm filename
+powerfile = cdm
+# file for transfer functions
+transfile = trans.dat
+
+# redshift at which transfer is stored
+transz = 0
+
+# optical depth, tau
+tau = 0.166
+

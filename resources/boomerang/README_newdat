@@ -1,0 +1,81 @@
+This is a README for the .newdat format used for the BOOMERANG 03 NA data
+release. 
+
+If you use the Boomerang data contained in this file, please
+acknowledge your use of it by citing the publication(s) relevant to
+the power spectra you use:  
+	<TT> : Jones et al 2005 (submitted ApJ)
+	<TE> : Piacentini et al 2005 (submitted ApJ)
+	<EE> : Montroy et al 2005 (submitted ApJ)
+
+General references to the Boomerang instrument, flight and maps can be
+made by citing Masi et al 2005 (submitted A&A)
+
+The best parameter extraction using these results has been carried out
+by the Boomerang team and described in MacTavish et al 2005 (submitted
+ApJ); you are welcome to attempt to improve on it, but please do so
+with care. If you wish to check your results and cite our work
+accordingly, please cite: Mactavish et al 2005
+
+The zipped tar file will expand into a data/ directory containing the
+current NA result .newdat file (B03_NA_21July05.newdat) with the window
+functions for each band placed in the data/windows/ subdirectory
+following the COSMOMC convention. The next COSMOMC public release
+will contain an updated subroutine capabable of reading the .newdat format
+(http://cosmologist.info/cosmomc/). 
+
+If you have any questions regarding this data set or its use please
+contact Carrie MacTavish (cmactavi@cita.utoronto.ca)
+
+The BOOMERANG Team, July 21 2005
+++++++++++++++++++++++++++++++++
+
+Description of .newdat format:  
+
+Header:
+-------
+line 1:	root filename for window functions placed in windows directory
+line 2:	number of bands in each pol type (ordering: TT EE BB EB TE TB)
+line 3:	calibration flag (1/0), recalibration factor (in temperature),
+	calibration error (in power)
+line 4:	beam error flag (1/0),  beam size (arcmins),
+	beam error (arcmins)
+	The beam error is treated as a gaussian error for each band at
+	l_eff. The calibration and beam error marginalization are
+        described in (Lewis and Bridle 2002 PRD 66) 
+line 5:	likelihood type:	0 == Gaussian 
+				1 == all bands offset lognormal
+				2 == select bands offset lognormal
+
+Band powers:
+------------
+this is followed by the bandpowers for each included polarization type
+ordered as above. Each type is preceded by a flag (e.g. TT) the
+columns represent
+
+band num, power, +err, -err, offset, l_eff+1,l_eff-1, offset flag
+
+where 'offset' is the lognormal offset to be used for the offset
+lognormal approximation to the band power likelihoods, and 'offset
+flag' determines selectively which bands will be transformed to offset
+lognormal for the likelihood evaluation.
+
+Band to band correlations:
+--------------------------
+Each pol type is followed by the block diagonal part of the total
+normalized correlation matrix for that pol type bands. i.e. this shows
+the band to band correlations for each pol type.
+
+Full inverse Fisher matrix:
+---------------------------
+At the end of the file the full n_band x n_band inverse Fisher matrix
+id ouput row by row. This contains the covariance for the full data
+set from the simultaneous determination of the best fit band powers of
+all included pol types. 
+
+Window functions:
+-----------------
+the window functions are placed in the windows subdirectory and follow
+the cosmomc format i.e. they are W_l/l where W_l is the band power
+window function as defined in MacTavish et al. 2005. The ordering of
+the columns is: TT TE EE BB (i.e. COSMOMC ordering)

@@ -1,0 +1,51 @@
+     Integrator for CMB anisotropy, CMB polarization and transfer functions
+
+     Developed and maintained by Uros Seljak (useljak@princeton.edu) and 
+     Matias Zaldarriaga (matiasz@sns.ias.edu)
+
+     Permission to use, copy, distribute and modify without fee or royalty at
+     any tier, this software and its documentation, for any purpose and without
+     fee or royalty is hereby granted, provided that 
+
+1)   you agree to comply with the following copyright notice and statements, 
+     including the disclaimer, and that the same appear on ALL copies of the 
+     software and documentation, including modifications that you make for 
+     internal use or for distribution:
+     
+     Copyright 1996, 1997, 1998 (versions up to 3.0) by 
+     Harvard-Smithsonian Center for 
+     Astrophysics and the Massachusetts Institute of Technology.  
+     All rights reserved.
+ 
+     Copyright 1999, 2000 (versions 3.0-4.0) by Princeton University
+     and Institute for Advanced Studies, Princeton.
+     All rights reserved.
+     
+     THIS SOFTWARE IS PROVIDED "AS IS", AND INSTITUTIONS ABOVE MAKE NO 
+     REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED.  
+     By way of example, but not limitation,
+     THEY MAKE NO REPRESENTATIONS OR WARRANTIES OF 
+     MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT 
+     THE USE OF THE LICENSED SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE 
+     ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.   
+     
+2)   Applications are limited to non-commercial and not-for-profit purposes
+
+3)   An appropriate acknowledgement is included in any publications 
+     based on work conducted with usage of the CMBFAST package OR any 
+     of its derivatives.
+
+     Boltzmann integrator, initial conditions and recombination routines are 
+     based on the COSMICS package of E. Bertschinger (written by Edmund 
+     Bertschinger, Chung-Pei Ma and Paul Bode at MIT). See the LICENSE file of 
+     the COSMICS distribution for restrictions on the modification and 
+     distribution of this software.
+
+     Recombination routine RECFAST written by D. Scott (UBC), based on 
+     calculations in the paper by Seager, Sasselov & Scott (ApJ, 523, L1, 1999).
+     See the license in recfast.f for further details regarding restrictions 
+     on the modification and distribution of this software.
+
+     Configure script, Makefile, fitsout.f, params.f, FITS and IARGC options
+     written by Matthias Bartelmann.
+

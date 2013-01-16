@@ -1,0 +1,23 @@
+Please read LICENSE_CMBFAST first.
+
+INTRODUCTION
+============
+
+CMBEASY has originated in parts from the CMBFAST package. Due to extensive
+modification, redesign and rewriting of the code, it is in most places completely
+distinct from CMBFAST. In some, it still resembles the original code closely.
+
+Copyright 2000-2007 by Michael Doran, Dartmouth College, Hanover, NH, USA
+
+LICENSE
+========
+
+For the code that has originated from CMBFAST, CMBFAST's LICENSE applies.
+
+For all other software components that no third party owns 
+patents, copyrights or trademarks for, CMBEASY is under GNU's General
+Public License, see http://www.gnu.org/copyleft/gpl.html.
+
+When using CMBEASY for scientific work, please acknowledge
+the use both of CMBFAST and CMBEASY.
+

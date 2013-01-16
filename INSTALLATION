@@ -1,0 +1,124 @@
+INSTALLING cmbeasy
+==========================================================
+
+Short version, for the long version see below:
+
+    > export CMBEASYDIR=path/to/cmbeasy
+    > mkdir build; cd build
+    > cmake path/to/cmbeasy            # use -G Xcode to generate XCode project files on MacOSX
+    > ccmake .                         #(optional, to check settings)
+    > make xcmb cmbeasy
+    > xcmb $CMBEASYDIR/resources/configuration.cfg
+
+
+PREREQUISITES
+=============
+
+  * build system:
+       From version 4.4 on, cmbeasy uses CMake (www.cmake.org)
+       to generate Makefiles. 
+
+  * Gnu scientific library (www.gnu.org/software/gsl/)
+
+  * the optional c++ port of the wmap 7-yr data needs cfitsio
+    (http://heasarc.nasa.gov/fitsio/fitsio.html)
+
+  * the optional graphical user interface  uses the Qt library (version >= 4.2)
+    (www.trolltech.com)
+
+  * for running monte-carlo chains, LAM/MPI needs to be properly set up, and a
+    suitable compiler wrapper (such as "mpic++") must be available.
+
+
+ENVIRONMENT VARIABLES
+=====================
+
+When building or running cmbeasy, the environment variable
+CMBEASYDIR  needs to be set.
+
+When using a bash shell, this can be accomplished by:
+
+$> export CMBEASYDIR=YOUR_CMBEASY_DIRECTORY
+
+where YOUR_CMBEASYDIRECTORY  should be replaced by cmbeasy's directory 
+(this directory the INSTALLATION text is in).
+This command can also be put in your ~/.bashrc file or similar.
+
+
+WMAP data
+==================
+
+For computing WMAP five year data likelihoods, cmbeasy assumes that the wmap
+data from LAMBDA (http://lambda.gsfc.nasa.gov/) is in the subdirectory "data"
+of the current working dir. This can of course be a link, and can be changed
+in "cmbeasy/analyze/wmap7/WMAP_7yr_options.h".
+
+
+CONFIGURING
+==================
+
+Change to the directory where you want cmbeasy to be build. This does not need
+to be the cmbeasy directory itself, but can be any directory, in order
+to keep source and build files separate.
+First, built the Makefile:
+
+> cmake PATH/TO/CMBEASY
+
+Optionally, you can use
+
+> ccmake PATH/TO/CMBEASY
+
+to use a text-interface to change build options or paths to include and library files.
+(After changing settings by using ccmake, make sure to first "configure" and then "generate"
+ the build files by pressing 'c' and 'g'.)
+
+If you install additional libraries (or changed the $PATH variable) after the first time you
+ran cmake or ccmake, remove the file CMakeCache.txt and retry.
+
+
+BUILDING
+==================
+
+To build the standard driver program xcmb:
+
+> make xcmb
+
+To build the graphical user interface:
+    
+> make cmbeasy
+
+To build the html-documentation in the build/doc directory:
+
+> make doxy
+
+To build the example monte-carlo driver (see also cmbeasy/montecarlo/howto-montecarlo.txt):
+
+> make mc_general
+
+To build a static/shared library to link into your own programs:
+
+> make cmbeasy-shared
+> make cmbeasy-static
+
+
+RUNNING
+=================
+
+That's it. You can now play around with the graphical front end by
+invoking
+
+> cmbeasy
+
+or - more scientifically -  call "xcmb"
+with a control-file as argument.
+
+
+> xcmb resources/configuration.cfg
+
+
+You can build your own driver programs by modifying
+this driver, i.e. 
+go to "anisotropy/xdriver.cc" and
+change things there. Then execute "make xcmb" again.
+
+

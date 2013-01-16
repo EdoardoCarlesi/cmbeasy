@@ -1,0 +1,66 @@
+<h2>Likelyhood analysis</h2>
+
+<font size="-1">CMBEASY</font>   can perform likelyhood analysis
+with on the fly data visualization. You can specify the parameter range
+if you click on the <em>likley</page> of the lower tabwidget. <br><br>
+
+For each parameter, you can give a lower and upper bound as well
+as the number of steps in this parameter direction. If the number of steps
+is one, then the lower bound will be used.For quintessence, you can also
+give the amount of dark energy at last scattering.<br><br>
+
+For a quick first try, you may take models out of the precalculated database
+<em>this time including quintessence</em> (as opposed to the usual morphing)
+by unselecting the <em>cmb</em> checkbox.<br><br>
+
+If the <em>cmb</em> checkbox    is unselected, then the data from the
+data base together with the background evolution of the universes is used.
+No fluctuations are calculated.
+
+The <em>accoustic</em> scale is inferred along the lines of
+astro-ph/0044160.  The same is true for the cluster abundance constraints,
+i.e. sigma 8. The supernovaes (SN1a) are independent of the model data base
+and anyhow given by the background  evolution [in fact, SN1a are somewhat "blind"
+if the product w*(Omega_dark ^ 1.4) is the same for different models].
+
+<h2>The first quick likelyhood</h2>
+
+<ol>
+<li>
+Keep everything in the page as it is <em>except for the number of steps</em>.
+I suggest selecting between 3 and 5 for a first try. Keep <em>cmb</em>
+unselected and in the <em>dark energy page above</em> select Lambda, if it
+is not already selected.</li>
+<li>
+Now hit the <em>do likelyhood</em> button.</li>
+<li>
+The status bar on the bottom of the window keeps you informed about the
+progress.
+</li>
+<li>
+<font color="red">If anything goes wrong,</font> a dialog will pop up and tell you that
+morphing has not been possible. This mostly happens because the parameter space
+stored in the model data base is not big enaugh.
+</li>
+<li>
+If everything went alright, you can now press the <em>marginalize button</em>.
+BTW: you can marginalize as often as you want to as soon as the likelyhood calculation
+has finished. Try it !
+</li>
+<li>
+In the <a href="marginalizedialog.html">Marginalize Dialog</a>, choose one X and one
+Y axis, marginalize over the others (you can also select one specific value, instead of
+marginalizing).
+</li>
+<li>
+To actually see the likelyhood, select the likelyhood page in the plot tabwidet.
+</li>
+<li>
+<font color="red">By (un)selecting <em>peak</em>,<em>SN1a</em> and <em>sigma8</em>
+the likelyhood will on the fly be built up by the product of the likelyhoods of the selected
+methods.</font> It is instructive to see in real time the effects of the various methods.
+<li>
+
+
+</ol>
+

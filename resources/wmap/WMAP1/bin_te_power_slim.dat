@@ -1,0 +1,38 @@
+# Wilkinson Microwave Anisotropy Probe (WMAP) year 1 data release.
+# WMAP One-Year Binned TE Power Spectrum, version 1 (Mar 2003)
+# Reference = WMAP Explanatory Supplement: http://lambda.gsfc.nasa.gov/
+# Column 1 = mean multipole moment l for the bin.
+# Column 2 = mean value of TE power spectrum (= C_l) in the bin,
+#             units = uK^2.  Binned using noise weights within each bin.
+# Column 3 = 'Error' for binned value, as computed from diagonal terms of
+#             the covariance matrix, units = uK^2.
+#             Included only as an estimate of their magnitude.  The
+#             multipole moments are slightly coupled, so a correct treatment
+#             of errors requires use of the entire Fisher matrix.
+#
+  4       3.6135       0.7436
+  10      -0.2090       0.1538
+  17      -0.0001       0.0674
+  26      -0.0164       0.0457
+  35      -0.0425       0.0297
+  46      -0.0066       0.0210
+  57       0.0155       0.0158
+  70      -0.0187       0.0124
+  83      -0.0067       0.0102
+  98      -0.0223       0.0086
+ 113      -0.0181       0.0075
+ 130      -0.0230       0.0066
+ 147       0.0018       0.0059
+ 166      -0.0107       0.0053
+ 185      -0.0059       0.0048
+ 206       0.0014       0.0044
+ 227       0.0055       0.0039
+ 250       0.0081       0.0035
+ 273       0.0052       0.0031
+ 298       0.0100       0.0027
+ 323       0.0072       0.0024
+ 350       0.0077       0.0022
+ 377       0.0021       0.0021
+ 406       0.0037       0.0022
+ 435      -0.0013       0.0024
+ 466      -0.0004       0.0026

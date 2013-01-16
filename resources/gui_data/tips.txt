@@ -1,0 +1,17 @@
+5
+The very first time you call cmbeasy's graphical user interface (gui), the WMAP data files will
+be converted to a binary format. This speeds up subsequent runs. While the data is
+converted, you can already use cmbeasy interactively, as the conversion is performed in
+the background.
+###
+Using the middle mouse button above any plot, you can define a rectangle to zoom in.
+You can do this several times in a row. Pressing the middle mouse button briefly will bring you
+back one zoom step.
+###
+If you would like to scroll around in the plot, just use the keyboard arrow keys.
+###
+You can print or save any curve in a plot. Just position the mouse pointer above 
+a certain curve and press the right mouse button. In the context menu, choose "save" or "print"
+###
+You can erase any curve in a plot: Just  position the mouse pointer above  the curve 
+and press the right mouse button. In the context menu, choose "cut"

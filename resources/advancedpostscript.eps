@@ -1,0 +1,387 @@
+
+
+1 1 eq { 
+/centertext{ 
+  gsave
+  aspectratio 1 scale currentpoint translate
+    dup
+  getboundin
+  true charpath 
+  getboundout 
+  getheightandwidth
+  neg 0.5 mul exch 
+  neg rmoveto show 
+  grestore
+ } def
+/centerexpon{
+  gsave
+    aspectratio 1 scale currentpoint translate
+    dup
+    expbound
+    getheightandwidth
+    neg 0.5 mul exch 
+    neg rmoveto
+    expon
+    grestore 
+} def
+/expon { (10) show (10) stringwidth pop 0.6 mul (M) stringwidth pop 0.2 mul exch rmoveto expfont show mainfont} def
+/exppath { (10) true charpath (10) stringwidth pop 0.6 mul (M) stringwidth pop 0.2 mul exch rmoveto  true charpath } def
+/expbound { getboundin exppath getboundout} def
+%/expbound {gsave newpath 0 0 moveto (10) true charpath (10) stringwidth pop 0.8 mul (M) stringwidth pop 0.2 mul exch rmoveto  true charpath flattenpath pathbbox grestore} def
+%/expbound { 0.1 0.2 0.5. 0.7 } def
+/expwidth { expbound getwidth } def
+/flushrightexp { dup expwidth neg  0 rmoveto expon } def
+/timespath{ mainfont true charpath expfont (x) true charpath mainfont } def 
+/flushrighttimesbound{ gsave  newpath 0 0 moveto exppath timespath  flattenpath pathbbox grestore} def
+/flushrighttimeswidth{ flushrighttimesbound getwidth} def
+/flushrighttimes { gsave currentpoint translate aspectratio 1 scale 2 copy flushrighttimeswidth neg  0 rmoveto 
+mainfont show expfont (x) show mainfont expon
+grestore
+%show show 
+} def
+/flushrighttextbound { gsave newpath 0 0 moveto true charpath flattenpath pathbbox grestore} def
+/flushrighttextwidth { flushrighttextbound getwidth} def
+/flushrighttext { 
+  gsave 
+    aspectratio 1 scale currentpoint translate
+    dup
+    %0.1
+    flushrighttextbound
+    getheightandwidth
+    %flushrighttextwidth
+    neg -0.015 add exch 
+    neg 0.5 mul rmoveto 
+    show
+  grestore
+} def
+
+
+
+/labeltext{
+  gsave
+    currentpoint translate
+    dup
+    getboundin
+    true charpath 
+  getboundout 
+    getheightandwidth
+    neg 0.5 mul exch 
+    neg rmoveto show 
+  grestore
+} def
+
+/newlabeltext{
+  1 eq { % if we go for show 
+  %  0 gt   {  %valid / stop ?
+    {
+      0 exch rmoveto
+      dup
+      scale % scale the fontsize 
+      dup
+      dup
+      1 eq { family1 } if
+      2 eq { family2 } if 
+      3 eq { family3 } if 
+      show  % finally, show string
+      dup
+      scale
+      0 exch rmoveto
+  %  } if
+ } repeat
+  } {
+    currentpoint translate 
+    getboundin
+  %  0 gt   {  %valid / stop ?
+    {
+      0 exch rmoveto
+      dup scale % scale the fontsize 
+      dup
+      dup
+      1 eq { family1 } if
+      2 eq { family2 } if 
+      3 eq { family3 } if 
+      true charpath  % finally, get charpath string
+      dup scale %inverse scaling 
+      0 exch rmoveto
+  %  } if
+    } repeat
+    getboundout
+    getheightandwidth
+    neg 0.5 mul exch 
+    %neg rmoveto  old version
+    neg pop 0 rmoveto
+  } ifelse
+} def
+
+/newlabeltextsecond{
+  1 eq { % if we go for show 
+    {
+      1 eq {gsave } if  %% v2
+      0 exch rmoveto
+      dup
+      scale % scale the fontsize 
+      dup
+      dup
+      1 eq { family1 } if
+      2 eq { family2 } if 
+      3 eq { family3 } if 
+      show  % finally, show string
+      dup
+      scale
+      0 exch rmoveto  
+      1 eq { grestore } if %% v2 
+ } repeat
+  } {
+    currentpoint translate 
+    getboundin
+    {
+      1 eq { gsave } if  %% v2
+      0 exch rmoveto
+      dup scale % scale the fontsize 
+      dup
+      dup
+      1 eq { family1 } if
+      2 eq { family2 } if 
+      3 eq { family3 } if 
+      true charpath  % finally, get charpath string
+      dup scale %inverse scaling 
+      0 exch rmoveto
+      1 eq { grestore } if %% v2 
+    } repeat 
+    getboundout
+    getheightandwidth
+    neg 0.5 mul exch 
+    %neg rmoveto  old version
+    neg pop 0 rmoveto
+  } ifelse
+} def
+
+/ylabel{
+gsave
+90 rotate
+0.5 ylabelborderoffset  moveto
+invaspectratio 1 scale
+newlabeltextsecond
+newlabeltextsecond
+grestore
+} def
+
+/xlabel{
+  gsave
+    0.5 xlabelborderoffset moveto
+       1 invaspectratio scale % this means in total 1/scaleY as in the case for ylabel
+    newlabeltextsecond
+    newlabeltextsecond
+  grestore 
+} def  
+
+/asp { aspectratio mul } def
+
+/herrorbar {
+  -0.005 asp 0 rmoveto
+  0.01 asp 0 rlineto
+  -0.005 asp 0 rmoveto
+} def
+/verrorbar {
+  0 -0.005  rmoveto
+  0 0.01  rlineto
+  0 -0.005  rmoveto
+} def
+/drawdatapoint {
+  newpath
+  moveto
+  herrorbar
+  lineto 
+  herrorbar
+  moveto 
+  verrorbar
+  lineto
+  verrorbar
+  stroke 
+%  pop pop pop pop
+} def
+
+/drawbox {
+  newpath
+  moveto 
+  gsave
+  scale 
+    1 0 rlineto
+    0 1 rlineto
+    -1 0 rlineto
+    closepath
+    fill
+  grestore
+} def
+
+/drawoversizebox {
+  newpath
+  moveto 
+  2 copy  % make a second copy of width and height
+  0 exch rlineto % from left upper to left bottom
+  0 rlineto % to right bottom
+  -1 mul 0 exch rlineto % to upper right
+  pop
+  closepath
+  fill
+} def
+
+/dx { drawoversizebox } def
+
+/b {
+  newpath
+  0.00001 mul 
+  exch
+  0.00001 mul
+  moveto 
+  0.00001 mul
+  exch 
+  0.00001 mul
+  exch
+  2 copy  % make a second copy of width and height
+  0 exch rlineto % from left upper to left bottom
+  0 rlineto % to right bottom
+  -1 mul 0 exch rlineto % to upper rigth
+  pop
+  closepath
+  fill
+
+} def
+
+/expfont { /Times-Roman findfont 90 skala  scalefont setfont} def
+/mainfont { /Times-Roman findfont 100  skala  scalefont setfont} def
+/tickfont { /Helvetica  findfont tickfontsize inversegraphregionscalemul skala  scalefont setfont} def
+
+
+
+} if
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% parsetext 
+%
+% parses text according to flow:
+%
+% Stack:    n - the number of different entities in the text
+%  then, for all n-entities
+%
+%  1,0 : Stopwagon, i.e. save current possiton if 1
+%   x, y:  shift  up and left/right 
+%   x, y: scale x, scale y
+%   \some font command which sets a font 
+%   1,0 show(1) or charpath(0) 
+%   x,y: scale x, scale y // inverse scaling
+%   x,y: inverse shift
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/parsetext{
+    {	
+      1 eq { currentpoint 14 2 roll } if  %% stopwagon ?
+       rmoveto %% shift
+      scale % scale the fontsize 
+      cvx
+      exec
+      1 eq { show} {true charpath} ifelse
+      scale 
+      rmoveto % go back from shift  
+      1 eq { moveto } if %% Stopwagon ?
+ } repeat 
+} def
+
+
+% EXAMPLE 
+%0.5 0.7 moveto	
+%1% stopwagon	
+%0 0%
+%1 1%
+%(nix)      
+%1                          
+%(family1)           
+%1 1% scale
+%0 0% shift
+%1 %stopwagon
+
+%0% stopwagon
+%0 0.05%
+%1 1%
+%(da)
+%1                                          
+%(family3) 
+%1 1% scale
+%0 -0.05% shift
+%0%stopwagon
+%2  %how many ?
+%parsetext
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% getboundin  -- savely prepares to get a boundary 
+%% getboundout -- flattenspath, gets the box 
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/getboundin { gsave newpath 0 0 moveto } def
+/getboundout { flattenpath pathbbox grestore } def
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%  After getboundin, doing whatever and getboundout,
+%%  these little helpers will return width, height, or both of the box
+%%
+%%  getwidth 
+%%  getheight
+%%  getheightandwidth 
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/getwidth { pop exch pop sub abs} def
+/getheight { exch pop sub abs exch pop } def
+/getheightandwidth { exch 4 1 roll sub abs 3 1 roll sub abs } def 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% three font families ...
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/family1 {  /Times-Italic findfont  1 scalefont setfont} def
+/family2 {  /Times-Roman   findfont 1  scalefont setfont} def
+/family3 {  /Symbol  findfont  1  scalefont setfont} def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Region helper, 50 percent less file space
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/r {
+  0.0001 mul 
+  exch
+  0.0001 mul
+  exch
+  rlineto
+} def 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The dash patterns for lines. Scalexy is provided by the postscriptplot.cc driver
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/dash0 { [] 0 setdash } def 
+/dash1 { [1 scalexy 2 scalexy ] 0 setdash } def
+/dash2 { [3 scalexy 3 scalexy ] 0 setdash } def
+/dash3 { [4 scalexy 3 scalexy 1 scalexy 3 scalexy ] 0 setdash } def
+/dash4 { [9 scalexy 9 scalexy ] 0 setdash } def
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Draw a cricle
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/dc { setrgbcolor newpath 0 360 arc fill } def

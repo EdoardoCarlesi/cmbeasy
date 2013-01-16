@@ -1,0 +1,37 @@
+# Wilkinson Microwave Anisotropy Probe (WMAP) 7-year data release.
+# WMAP 7-Year Combined BB Power Spectrum, version 4.1 (October 2010)
+#
+# References: - WMAP Explanatory Supplement: http://lambda.gsfc.nasa.gov/
+#             - Larson, et.al. (2010)
+#
+# Column 1 = mean multipole moment l for the bin.
+# Column 2 = smallest l contributing to the bin.
+# Column 3 = largest l contributing to the bin.
+# Column 4 = mean value of BB power spectrum, l(l+1)/2pi * C_l, in the bin,
+#            units = uK^2.  The mean is weighted.
+# Column 5 = 'Error' for binned value, as computed from diagonal terms of the
+#            Fisher matrix, units = uK^2.
+#            These are included only as an estimate of their magnitude.
+#            The multipole moments are slightly coupled, so a correct
+#            treatment of errors requires use of the entire Fisher matrix
+#            or the WMAP likelihood code.
+#            Additionally, because the error bars are Master estimates,
+#            they do not capture the asymmetry and non-Gaussianity
+#            of the likelihood for low multipole moments l.
+#
+    4     2     7        0.014049        0.025095
+   15     8    23       -0.000193        0.045659
+   36    24    49        0.125574        0.107159
+   74    50    99       -0.065621        0.212665
+  124   100   149        0.417608        0.543629
+  174   150   199       -1.724629        1.092407
+  224   200   249        1.374018        1.986187
+  274   250   299       -3.904709        3.423271
+  324   300   349       -2.389552        5.713336
+  374   350   399        5.095270        9.294782
+  424   400   449        7.115314       14.750164
+  474   450   499      -13.148031       22.948637
+  549   500   599      -46.834070       29.227112
+  674   600   749     -101.041087       59.852307
+  824   750   899     -108.249952      179.788755
+  962   900  1024     -924.236026      498.898149
