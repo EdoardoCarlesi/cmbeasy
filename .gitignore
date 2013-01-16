@@ -1,3 +1,4 @@
 test/*
 test
 old_files/*
+*.swp*

@@ -63,7 +63,7 @@ int main ()
     control.cmb=false;
     control.scalar = false; 
 
-if(true)
+if(false)
 {
     control.power_cdm=true; 
     control.cmb=true;
@@ -120,12 +120,15 @@ double kkk=0.22; // Growth factor scale
     double a=1.e-12;
 #endif
     // Coupling parameter (both EXP and IPL)
-   double beta=0.099;
+   double beta=0.0;
+
     // Parameter for EXP potential
     double lambda=20.; 
     
     // Parameter for IPL potential
     double alpha=0.134; 
+
+    // Potential amplitude
     double amplitude=1.00e-07;
 
     // Amplitude normalizations
