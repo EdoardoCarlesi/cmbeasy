@@ -733,6 +733,7 @@ void QuintCosmos::printStatus(ostream &o) {
   o << " omega_nu  : " << omega_nu() <<     "    rho_nu0:   " << rho_nu0() << endl;
   o << " omega_nuNR: " << omega_nuNR() <<   "    rho_nuNR0: " << rho_nuNR0() << endl;
   o << " omega_cdm : " << omega_cdm() <<    "    rho_cdm0:  " << rho_cdm0()  << endl;
+  o << " omega_m   : " << omega_m()   << endl;
   o << " omega_b   : " << omega_b() <<      "    rho_b0:    " << rho_b0() << endl;
   o << " omega_quint: " << omega_q() <<      "    rho_q0:    " << tau2rho_q(tau_0()) << endl;
   o << " omega_kurv.   : " << omega_k() << endl;

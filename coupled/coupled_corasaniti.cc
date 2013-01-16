@@ -101,8 +101,8 @@ if(false)
 double kkk=0.22; // Growth factor scale
 
 #ifndef LCDM
-    double omega_cdm=20.65; 
-    double omega_b=3.77;
+    double omega_cdm=21.9; 
+    double omega_b=4.53;
     double omega_m=omega_cdm + omega_b;
     double omega_nuNR=0.;
     double omega_nu=0.;
@@ -110,8 +110,8 @@ double kkk=0.22; // Growth factor scale
     double hub=70.;
     double a=1.e-12;
 #else
-    double omega_cdm=21.9; 
-    double omega_b=4.53;
+    double omega_cdm=22.5; 
+    double omega_b=4.8;
     double omega_m=omega_cdm + omega_b;
     double omega_nuNR=0.;
     double omega_nu=0.;

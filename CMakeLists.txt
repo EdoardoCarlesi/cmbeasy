@@ -22,7 +22,6 @@ SET(ANALYZE ${PROJECT_SOURCE_DIR}/analyze)
 SET(WMAP ${ANALYZE}/wmap7)
 SET(GUI ${PROJECT_SOURCE_DIR}/gui)
 SET(COUPLED ${PROJECT_SOURCE_DIR}/coupled)
-SET(MARGINALIZE ${PROJECT_SOURCE_DIR}/marginalize)
 
 FIND_PACKAGE(Doxygen)
 FIND_PACKAGE(GSL)
@@ -255,11 +254,6 @@ TARGET_LINK_LIBRARIES(cmb ${BASIC_LIBS})
 ADD_EXECUTABLE(test_mass_function ${ANISOTROPY}/test_mass_function.cc ${BASIC_WMAPSOURCES})
 TARGET_LINK_LIBRARIES(test_mass_function ${BASIC_LIBS})
 
-
-#################################################
-
-ADD_EXECUTABLE(marginalize ${MARGINALIZE}/marginalize.cc ${MARGINALIZEFILES} ${ALL_SOURCES})
-TARGET_LINK_LIBRARIES(marginalize ${BASIC_LIBS})
 
 #################################################
 
