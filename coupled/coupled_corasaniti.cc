@@ -74,6 +74,7 @@ if(false)
 	
 	double index=0.951;
 	double optdlss=0.088;
+    double a=1.e-12;
 
     cosmos.setOptDistanceLss(optdlss);
     cosmos.setInitialPower(index); 
@@ -100,27 +101,25 @@ if(false)
 	// cDE099::cdm=20.65  b=3.77 beta=0.099
 double kkk=0.22; // Growth factor scale
 
-#ifndef LCDM
-    double omega_cdm=21.9; 
-    double omega_b=4.53;
+#ifdef LCDM
+    double omega_cdm=22.4; 
+    double omega_b=4.6;
     double omega_m=omega_cdm + omega_b;
     double omega_nuNR=0.;
     double omega_nu=0.;
     double omega_q=100. - omega_b - omega_cdm - omega_nu;
     double hub=70.;
-    double a=1.e-12;
 #else
-    double omega_cdm=22.5; 
-    double omega_b=4.8;
+    double omega_cdm=20.65; 
+    double omega_b=3.77;
     double omega_m=omega_cdm + omega_b;
     double omega_nuNR=0.;
     double omega_nu=0.;
     double omega_q=100. - omega_b - omega_cdm - omega_nu;
     double hub=70.;
-    double a=1.e-12;
 #endif
     // Coupling parameter (both EXP and IPL)
-   double beta=0.0;
+   double beta=0.099;
 
     // Parameter for EXP potential
     double lambda=20.; 
