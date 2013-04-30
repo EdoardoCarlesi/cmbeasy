@@ -1,7 +1,6 @@
 #include "spline.h"
 #include "global.h"
 
-
 #include <iomanip>
 #include <sstream>
 #include <limits>

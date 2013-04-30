@@ -352,8 +352,8 @@ void dumpOmegas(Cosmos& c, std::string prefix)
   for (double lna=0.; lna > log(c.a_min()) ; lna -= (1./points)) {
     double a = exp(lna);
     double tau = c.a2tau(a);
-    double norm = c.tau2rho(c.a2tau(1.0)) / (3 * pow(c.H_0_cpm()*c. M_p(), 2.0));
-    double h_factor = c.tau2rho(tau) / (3 * pow(c.H_0_cpm()*c. M_p(), 2.0));
+    double norm = sqrt(c.tau2rho(c.a2tau(1.0)) / (3 * pow(c.H_0_cpm()*c. M_p(), 2.0)));
+    double h_factor = sqrt(c.tau2rho(tau) / (3 * pow(c.H_0_cpm()*c. M_p(), 2.0)));
   
     O_m.set(a, c.tau2rho_m(tau)/c.tau2rho(tau));
     O_b.set(a, c.tau2rho_b(tau)/c.tau2rho(tau));

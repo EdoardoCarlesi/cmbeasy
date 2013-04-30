@@ -312,13 +312,17 @@ cout << "Cosmos:printOutputList for " << fname << ", step: " << yr_step << " z_m
 	year2a->arm();
 	yr=0;
 
+
 do{
  yr += yr_step;
+if(ageYr > yr)
+{
  a = year2a->fastY(yr);
  z = 1./a - 1;
-//	cout << "Year: " << yr << " a: " << a << endl;
+	cout << "Year: " << yr << " a: " << a << endl;
 if(z<z1 && z>z0) fprintf(out, "%lf\n", a);
 if(a>1.) fprintf(out, "%lf\n", 1.);
+}
 } while (yr<ageYr);
 
 	fclose(out);

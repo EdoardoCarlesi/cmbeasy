@@ -17,7 +17,6 @@
 
 #include "crossover.h"
 #include "crossoverfield.h"
-
 #include "massiveneutrinos.h"
 
 #ifdef INTERACTING

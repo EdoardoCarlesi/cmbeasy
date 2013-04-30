@@ -16,7 +16,7 @@
 #include "spline.h"
 #include "DataManager.h"
 
-//#define LCDM
+#define LCDM
 
 int main ()
 { 
@@ -247,11 +247,11 @@ cout << "************** \n" ;
       accept = false;
     }
 
-double freqYr = 1.5e+8;
+double freqYr = 2.5e+8;
 
-double z0=0; double z1=5;
+double z0=0; double z1=60;
 	
-//cosmos.printOutputList("output_list.txt", freqYr, z0, z1);	 
+  cosmos.printOutputList("output_list_250.txt", freqYr, z0, z1);	 
 
 cout << "Evolution calculated.\n";
 cout << "************** \n" ;
