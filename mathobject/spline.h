@@ -282,14 +282,18 @@ private:
   //int cC;
   void motherKilled();  //!< if mother is killed
   void addChild(Spline *c) {
+#ifdef WITH_OMP
 #pragma omp critical (SplineChildren)
+#endif
     {
       children[c] = c; childExists = true;
     }
   }  //!< adds another Child to the Child-map
 public:
   void removeChild(Spline *c) {
+#ifdef WITH_OMP
 #pragma omp critical (SplineChildren)
+#endif
     {
       children.erase(children.find(c));
       childExists = !children.empty();

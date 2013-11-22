@@ -3,7 +3,9 @@
 void Anchor::kill() {
   // cout << "---- ANCHOR HAS BEEN ASKED TO KILL --"<<endl;
   bool isEmpty;
+#ifdef WITH_OMP
 #pragma omp critical (Anchor)
+#endif
   {
     isEmpty = obj.empty();
   }
@@ -11,7 +13,9 @@ void Anchor::kill() {
     //cout << "---- ANCHOR IS killing --   "<< obj.begin()->second  << endl;
     delete obj.begin()->second;
     //cout << "finished " << endl;
+#ifdef WITH_OMP
 #pragma omp critical (Anchor)
+#endif
     {
       isEmpty = obj.empty();
     }

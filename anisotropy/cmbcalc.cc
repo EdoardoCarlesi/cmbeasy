@@ -309,7 +309,9 @@ int CmbCalc::go(Cosmos* cosmos,string name,ControlPanel& control, bool interacti
 #ifdef OMP_DEBUG
   time_before = omp_get_wtime();
 #endif
+#ifdef WITH_OMP
 #pragma omp parallel for
+#else
   for (int kNo = 0; kNo < nk; ++kNo)  {
     try {
       oneK(kNo, cosmos, control);
@@ -325,7 +327,9 @@ int CmbCalc::go(Cosmos* cosmos,string name,ControlPanel& control, bool interacti
 #endif
   std::vector<SplineWeb*> allPowerWebs = cosmos->powerSplineWebs();
   int size = allPowerWebs.size();
+#ifdef WITH_OMP
 #pragma omp parallel for
+#endif
   for (int i = 0; i<size; ++i) {
     allPowerWebs[i]->makeProper();
   }
@@ -375,7 +379,9 @@ int CmbCalc::goTransfer(Cosmos* cosmos,string name,const ControlPanel& control,b
 
     if (interactive) return nkt;
     //   Loop over wavenumbers.
+#ifdef WITH_OMP
 #pragma omp parallel for
+#endif
     for (unsigned int kNo = 0; kNo < transferK.size(); ++kNo) {
       try {
         oneKTransfer(kNo, cosmos,control);
@@ -433,7 +439,9 @@ int CmbCalc::prepareScalarCl(Cosmos* cosmos, const ControlPanel& control,CL &cl,
 #ifdef OMP_DEBUG
    double time_before = omp_get_wtime();
 #endif
+#ifdef WITH_OMP
 #pragma omp parallel for
+#endif
       for (unsigned int j = 0; j < bessel.size() ; ++j)
           oneCl(cosmos, j, cl, control);  // calculate scalar cl's
       cl.ts[0]->makeProper();
@@ -660,7 +668,9 @@ void CmbCalc::oneK(int k,Cosmos* cosmos,const ControlPanel& control) {
          dtbValues[tauend] = dtb;
        }
      }
+#ifdef WITH_OMP
 #pragma omp critical (TensorSources)
+#endif
      for (j=firstj; j < TimeSteps; ++j) {
        double tauend = mTimeSteps[j];
        dtWeb->set(pert->k, tauend, dtValues[tauend]);
@@ -816,7 +826,9 @@ void CmbCalc::oneCl(Cosmos* cosmos, int j,CL& cl,const ControlPanel& control) {
   double l2 =  FOURPI2*l * (l+ 1);  // (4*pi)^2 * l*(l+1)
   // loop over all spectral indices 
   // The FOURPI2 is needed from the integration to get the C_l's
+#ifdef WITH_OMP
 #pragma omp critical
+#endif
   for (unsigned int n = 0; n < cosmos->InitialPower.size(); n++) {
     cl.ts[n]->setForce(l,  clReturn.clts[n] * l2);      
     cl.es[n]->set(clReturn.cles[n]* ctnorm * l2);

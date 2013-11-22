@@ -54,14 +54,18 @@ class Anchor {
   ~Anchor() { kill(); }
   //! add object to watchlist anchor
   void add(AnchorEnabled* s) {
+#ifdef WITH_OMP
 #pragma omp critical (Anchor)
+#endif
     {
       obj[s]=s; count++;
     }
   }
   //! remove spline from watchlist of anchor
   void remove(AnchorEnabled* s) {
+#ifdef WITH_OMP
 #pragma omp critical (Anchor)
+#endif
     {
       obj.erase(obj.find(s));
       count--;

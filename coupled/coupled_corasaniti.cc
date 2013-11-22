@@ -42,9 +42,9 @@ int main ()
     // Setting all cosmos values to default
 #ifdef LCDM
     cmbcalc.setGauge(Gauge::synchronous);
+    //cmbcalc.setGauge(Gauge::speedyInvariant);
 #else
     cmbcalc.setGauge(Gauge::speedyCoupledInvariant);
-    //cmbcalc.setGauge(Gauge::speedyInvariant);
 #endif
     
     // Set Quintessence type
@@ -63,17 +63,19 @@ int main ()
     control.cmb=false;
     control.scalar = false; 
 
-if(false)
+if(true)
 {
     control.power_cdm=true; 
     control.cmb=true;
     control.scalar = true; 
 } 
-   control.tensor = false;    
+    control.tensor = false;    
     control.setInitialConditions(ControlPanel::adiabatic);
 	
-	double index=0.951;
-	double optdlss=0.088;
+    //double index=0.9624;
+    double index=0.972;
+    double optdlss=0.089;
+    //double optdlss=0.0925;
     double a=1.e-12;
 
     cosmos.setOptDistanceLss(optdlss);
@@ -102,13 +104,18 @@ if(false)
 double kkk=0.22; // Growth factor scale
 
 #ifdef LCDM
-    double omega_cdm=22.4; 
-    double omega_b=4.6;
+    double hub=70;
+   // double omega_cdm=12.029/(hub*hub)*(100*100); 
+   // double omega_b=2.207/(hub*hub)*(100*100);
+    double omega_cdm = 23.3;
+    double omega_b = 4.63;
     double omega_m=omega_cdm + omega_b;
     double omega_nuNR=0.;
     double omega_nu=0.;
     double omega_q=100. - omega_b - omega_cdm - omega_nu;
-    double hub=70.;
+
+    cout << "CDM= " << omega_cdm << endl;
+
 #else
     double omega_cdm=20.65; 
     double omega_b=3.77;
@@ -131,8 +138,8 @@ double kkk=0.22; // Growth factor scale
     double amplitude=1.00e-07;
 
     // Amplitude normalizations
-   double norm1=1.0e-10;
-   double norm=20.;
+   double norm1=1.0e-9;
+   double norm=2.215;
 
     // Vacuum and Quintessence stuff
     double initialQ;
@@ -141,8 +148,8 @@ double kkk=0.22; // Growth factor scale
     double A=0;
   
     omega_cdm /= 100;
-    omega_b /= 100;
     hub     /= 100;
+    omega_b /= 100;
     omega_q /= 100;
     omega_nuNR /= 100;
     omega_nu /= 100;
@@ -300,11 +307,11 @@ cout << "************** \n" ;
 	int size = cosmos.Z2H_spline->size();
 
 	for(int j=0; j<size; j++) 
-{
-	double oldv = cosmos.Z2H_spline->ydat[j];
-	cosmos.Z2H_spline->setY(j, oldv/H0);
-	//cout << "spline Z2H, oldv: " << oldv << " H0: " << H0 << endl;
-}
+	{
+		double oldv = cosmos.Z2H_spline->ydat[j];
+		cosmos.Z2H_spline->setY(j, oldv/H0);
+		//cout << "spline Z2H, oldv: " << oldv << " H0: " << H0 << endl;
+	}
 	cosmos.Z2H_spline->dump();
 
 #endif
